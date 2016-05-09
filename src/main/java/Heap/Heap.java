@@ -79,7 +79,7 @@ public class Heap<T extends Comparable<T>>{
     public void down(int x){
         int maxChild;
         T top = this.array[x];
-        while (x < (this.size-1)/2){
+        while (x < (this.size)/2){
             int lChild = 2*x + 1;
             int rChild = lChild + 1;
             if (this.array[lChild].compareTo(this.array[rChild]) < 0 && rChild < this.size){
@@ -109,6 +109,7 @@ public class Heap<T extends Comparable<T>>{
     
     @Override
     public String toString(){
+        if (this.size == 0) return null;
         String result = "";
         for (int i = 0; i < size; i++) result+=this.array[i] + " ";
         return result;
